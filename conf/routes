@@ -1,0 +1,27 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+#GET     /views/*any                 controllers.Assets.at(path="html/" , any)
+
+# Home page
+GET     /                           controllers.Application.index(any = "none")	
+GET 	/users						controllers.Application.getUsers()
+GET 	/json						controllers.Application.getJson(query: String)
+GET 	/metar						controllers.Application.getMetar(query: String)
+GET 	/actors						controllers.Application.getMySqlDb()
+GET     /google						controllers.Application.google()
+POST    /							controllers.Application.sendMessage()
+	
+
+#TODO - Play routes serving JSON files to AngularJS
+GET 	/jsRoutes					controllers.Application.jsRoutes()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+#Re-routes any link to index
+GET 	/*any				        controllers.Application.index(any)	
+

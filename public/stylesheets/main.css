@@ -1,0 +1,25 @@
+body{
+	padding-top:30px;
+	background-color: #ff6c00;
+	font-size: 10pt;
+	overflow-x: hidden;
+	}
+	
+
+section{	
+	height:auto;
+}
+
+.well{
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+}
+
+.jsonColor{
+	color: #ff6c00;
+}
+
+.span6{
+	padding-right: 20px;
+}

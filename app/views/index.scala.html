@@ -1,0 +1,24 @@
+@(message: String)
+
+@main("Welcome to Play") {
+
+     <div id="content">
+	<h1 >This will change: <span class="jsonColor"> @message</span></h1>
+	
+	
+	<h3>Send a Message</h3>
+	<form method="post" action="@routes.Application.sendMessage()">
+        <label>Enter Message Here: </label>
+        <input type="text" name="message" /><br/>
+        <input class="btn"  type="submit" value="Submit"/>
+	</form>
+		
+		<h5>Testing REDIRECT</h5>
+		<form method="get" action="@routes.Application.google()">
+			<label>Search something on google: </label>
+        	<input type="text" name="googleQuery" /><br/>
+			<input class="btn" type="submit" value="Google!"   />
+		</form>
+	
+
+}

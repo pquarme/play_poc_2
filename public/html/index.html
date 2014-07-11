@@ -1,0 +1,70 @@
+<div class="span6">
+	<div class="row">
+		<section class="well">
+			<h5>Simple test with angular</h5>
+			<h1>{{message}}</h1>
+		</section>
+
+
+		<section class="well">
+			<h5>Show List of Users</h5>
+			<input class="btn btn-primary" type="submit" ng-click="getUserList()"
+				value="Get List"></input>
+			<div ng-repeat="user in usersAjax">
+				<h6>{{user.fName}} - {{user.lName}} - {{user.occupation}}</h6>
+			</div>
+		</section>
+
+
+		<section class="well">
+			<h5>Testing JSON Request</h5>
+			<form>
+				<label>Enter a text</label> <input name="location" type="text"
+					ng-model="searchQuery" /> </br> <input class="btn" type="submit"
+					value="Submit" ng-click="getJson()" />
+			</form>
+		</section>
+
+
+
+		<section class="well">
+			<h5>METAR JSON Request</h5>
+			<form>
+				<label>Enter a location</label> <input name="location" type="text"
+					ng-model="locQuery" /> </br> <input class="btn" type="submit"
+					value="Submit" ng-click="getMetar()" />
+			</form>
+		</section>
+	</div>
+</div>
+
+<div class="span6">
+	<div class="row">
+		<section class="well">
+			<h5>MySql Database Test</h5>
+			<input class="btn btn-primary" type="submit"
+				ng-click="getActorList()" value="Get List"></input>
+			<div style="padding-top: 20px;" ng-show="showTable">
+			<form style="text-align: ;">
+				<label>Search: <input name="location" type="text" ng-model="filtrQuery" /></label> 
+			</form>
+				<table  class="table table-striped table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>Index</th>
+							<th>FirstName</th>
+							<th>LastName</th>
+						</tr>
+					<thead>
+					<tbody>
+						<tr ng-repeat="actor in actorsList | filter:filtrQuery">
+							<td>{{$index}}</td>
+							<td>{{actor.firstName}}</td>
+							<td>{{actor.lastName}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+</div>
